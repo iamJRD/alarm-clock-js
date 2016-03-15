@@ -1,4 +1,4 @@
-var alarmClock = require('./alarmClock.js');
+var alarmClock = require('./../js/Clock.js');
 var prompt = require('prompt');
 prompt.start();
 

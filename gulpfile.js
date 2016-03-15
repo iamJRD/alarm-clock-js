@@ -21,7 +21,7 @@ var browserSync = require('browser-sync').create();
 var buildProduction = utilities.env.production;
 
 gulp.task('concatInterface', function(){
-  return gulp.src(['./js/browser.js', './js/time.js'])
+  return gulp.src(['./js/*.js'])
     .pipe(concat('allConcat.js'))
     .pipe(gulp.dest('./tmp'));
 });
@@ -46,10 +46,10 @@ gulp.task("clean", function(){
 gulp.task("build", ['clean'], function(){
   if (buildProduction){
     gulp.start('minifyScripts');
-    } else {
-      gulp.start('jsBrowserify');
-    }
-    gulp.start('bower');
+  } else {
+    gulp.start('jsBrowserify');
+  }
+  gulp.start('bower');
 });
 
 gulp.task('jshint', function(){
