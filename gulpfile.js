@@ -4,6 +4,8 @@ var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
+var del = require('del');
+var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
 
 gulp.task('concatInterface', function(){
@@ -25,11 +27,20 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
   .pipe(gulp.dest("./build/js"));
 });
 
-gulp.task("build", function(){
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
+gulp.task("build", ['clean'], function(){
   if (buildProduction){
     gulp.start('minifyScripts');
+    } else {
+      gulp.start('jsBrowserify');
     }
-      else{
-        gulp.start('jsBrowserify');
-      }
+});
+
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
