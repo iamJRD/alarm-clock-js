@@ -1,12 +1,1 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
-},{}],2:[function(require,module,exports){
-var alarmClock = require('./../js/alarmClock.js').alarmClock
-
-$(document).ready(function(){
-  $('#setAlarm').submit(function(event){
-    event.preventDefault();
-  });
-});
-
-},{"./../js/alarmClock.js":1}]},{},[2]);
+!function r(n,e,t){function o(i,f){if(!e[i]){if(!n[i]){var a="function"==typeof require&&require;if(!f&&a)return a(i,!0);if(u)return u(i,!0);var c=new Error("Cannot find module '"+i+"'");throw c.code="MODULE_NOT_FOUND",c}var l=e[i]={exports:{}};n[i][0].call(l.exports,function(r){var e=n[i][1][r];return o(e?e:r)},l,l.exports,r,n,e,t)}return e[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}({1:[function(r,n,e){},{}],2:[function(r,n,e){r("./../js/alarmClock.js").alarmClock;$(document).ready(function(){$("#setAlarm").submit(function(r){r.preventDefault()})})},{"./../js/alarmClock.js":1}]},{},[2]);
